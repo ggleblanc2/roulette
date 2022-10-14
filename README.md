@@ -1,10 +1,12 @@
 # Roulette
 
-I created a fairly complex Swing GUI with two complex images.  You can enjoy this application as a game, or you can read the technical description to see how the GUI was put together,
+I created a fairly complex Swing GUI with two complex images.  You can enjoy this application as a game, or you can read the [technical description](TECHNICAL.md) to see how the GUI was put together,
 
 Here's what the GUI looks like after you've added a player.
 
 ![Opening GUI](readme-images/roulette1.png)
+
+The GUI is rather tall and measures 1416 x 1077 pixels.
 
 Here's what the GUI looks like after you've spun the roulette wheel a few times and placed three bets on the roulette table.
 
