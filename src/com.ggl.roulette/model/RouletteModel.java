@@ -61,6 +61,8 @@ public class RouletteModel {
 	}
 	
 	public void removePlayer(Player player) {
+		RouletteChip rouletteChip = player.getRouletteChip();
+		this.rouletteChips.addRouletteChip(rouletteChip);
 		this.players.remove(player);
 	}
 	
