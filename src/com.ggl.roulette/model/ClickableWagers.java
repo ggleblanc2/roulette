@@ -39,6 +39,7 @@ public class ClickableWagers {
 		createZeroBets(clickableWagers);
 		createNumberBets(clickableWagers, numbers);
 		createColumnBets(clickableWagers, numbers);
+		createLineBets(clickableWagers, numbers);
 		createStreetBets(clickableWagers, numbers);
 		createFourCornerBets(clickableWagers, numbers);
 		createHorizontalDoubleBets(clickableWagers, numbers);
@@ -116,6 +117,36 @@ public class ClickableWagers {
 			}
 			x += segmentWidth;
 		}
+	}
+	
+	private void createLineBets(List<ClickableWager> clickableWagers, 
+			String[][] numbers) {
+		int x = totalMargin + 2 * segmentWidth - quarterWidth;
+		int y = totalMargin + 3 * segmentWidth - quarterWidth;
+		for (int index = 0; index < numbers[2].length - 1; index++) {
+			Rectangle bounds = new Rectangle(x, y, halfWidth, halfWidth);
+			int start = Integer.valueOf(numbers[2][index]);
+			String[] range = createLineBetRange(start);
+			clickableWagers.add(new ClickableWager(bounds, WagerType.LINE_BET, range));
+			x += segmentWidth;
+		}
+	}
+
+	private String[] createLineBetRange(int start) {
+		int next = start + 3;
+		String[] range1 = rouletteWheel.getNumberRange(start, start + 2);
+		String[] range2 = rouletteWheel.getNumberRange(next, next + 2);
+		String[] range = new String[range1.length + range2.length];
+		
+		int j = 0;
+		for (int i = 0; i < range1.length; i++) {
+			range[j++] = range1[i];
+		}
+		for (int i = 0; i < range2.length; i++) {
+			range[j++] = range2[i];
+		}
+		
+		return range;
 	}
 	
 	private void createStreetBets(List<ClickableWager> clickableWagers, 
