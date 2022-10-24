@@ -54,13 +54,14 @@ The `JFrame` view consists of a `JFrame` class, 7 `JPanel` classes, and 3 image 
 
 The `RouletteFrame` class creates the `JFrame` and has several convenience getter/setter methods so that I only have to pass one instance of the `RouletteFrame` class to the controller classes.  The controller classes don't need to know what part of the view they're updating.
 
-The `CallBoardPanel` class creates the call board `JPanel`.  The call board is a customized `JTable`.
+The `CallBoardPanel` class creates the call board `JPanel`.  The call board is a customized `JTable`.  This class has a few interal controller classes to manage the appearance of the `JTable`.
+
 
 The `ControlPanel` class holds the `CallBoardPanel` `JPanel`, the `PlayerPanel` `JPanel`, and the `MenuPanel` `JPanel`.  One way to create complex `JPanel` layouts is to combine simpler `JPanel` layouts.
 
 The `MenuPanel` class holds the menu `JButtons`.  This class uses a `GridBagLayout`.
 
-The `PlayerPanel` class creates the player `JPanel`.  The player `JPanel` uses a `JTable` to hold the `Player` instances.
+The `PlayerPanel` class creates the player `JPanel`.  The player `JPanel` uses a `JTable` to hold the `Player` instances.  This class has a few interal controller classes to manage the appearance of the `JTable`.
 
 The `RouletteTablePanel` class holds a drawing `JPanel` where I draw the roulette table.  Study the [Performing Custom Painting](https://docs.oracle.com/javase/tutorial/uiswing/painting/index.html) section to see how this drawing `JPanel` works.
 
